@@ -1,10 +1,10 @@
 import "./ArrayVisual.css"
+import { useState } from "react";
 
 function ArrayVisual() {
-    var numCols = 12;
-    var numRows = 1;
+    const [numElements, setNumElements] = useState(12);
     let elements = []
-    for(let i = 0; i < numCols; i++) {
+    for(let i = 0; i < numElements; i++) {
         elements.push(
             <>
             <div className="element" key={i}>
@@ -16,7 +16,14 @@ function ArrayVisual() {
 
     return (
         <>
-        <div className="ArrayVisual" style={ {"gridTemplateColumns" : `repeat(${numCols}, [element] 1fr)`} }>
+        <input type="text" placeholder={"number of elements"} id = "input"/>
+        <input type="submit" onClick={
+            () => {
+                setNumElements(parseInt(document.getElementById("input").value))
+            }
+        }/>
+        
+        <div className="ArrayVisual" style={ {"gridTemplateColumns" : `repeat(${numElements}, [element] 1fr)`, "aspectRatio" : `${numElements}`} }>
             {elements}
         </div>
         </>
