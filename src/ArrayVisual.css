@@ -1,0 +1,22 @@
+#ArrayVisualRoot {
+    background-color: bisque;
+    padding: 2em;
+}
+
+.ArrayVisual {
+    background-color: transparent;
+    border: solid gray 2px;
+    aspect-ratio: 12;
+    display: grid;
+    /* grid-template-columns: repeat(12, [element] 1fr); this is 1-indexed */
+    grid-template-rows: [first] 100%;
+}
+
+.element {
+    border: solid gray 1px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+

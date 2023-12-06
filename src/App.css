@@ -1,0 +1,15 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: bisque;
+}
+
+.card {
+  padding: 2em;
+  background-color: aqua;
+  font-size: 40px;
+  font: bolder;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+}
