@@ -10,6 +10,7 @@
     display: grid;
     /* grid-template-columns: repeat(12, [element] 1fr); this is 1-indexed */
     grid-template-rows: [first] 100%;
+    max-height: 125px;
 }
 
 .element {

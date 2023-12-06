@@ -16,8 +16,7 @@ function ArrayVisual() {
 
     return (
         <>
-        <input type="text" placeholder={"number of elements"} id = "input"/>
-        <input type="submit" onClick={
+        <input type="text" placeholder={"number of elements"} id = "input" onChange={
             () => {
                 setNumElements(parseInt(document.getElementById("input").value))
             }
