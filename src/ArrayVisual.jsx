@@ -15,9 +15,10 @@ function ArrayVisual() {
         )
     }
 
-    return (
-        <>
-        <p style={ {fontWeight : "bold"} }>
+    function InitWithDefault() {
+        return (
+            <>
+            <span style={ {fontWeight : "bold"} }>
             int array[
             <input type="text" size={1} maxLength={2} id = "size" onChange={
                 () => {
@@ -36,7 +37,38 @@ function ArrayVisual() {
                 }
             }/>
             &#125;
-        </p>
+        </span></>
+        )
+    }
+
+    function InitExplicit() {
+        return (
+            <>
+            <span style={ {fontWeight : "bold"} }>
+            int array[] = &#123; 
+            <input type="text" size={3} id = "explicit" onChange={
+                () => {
+                    if (isNaN (parseInt(document.getElementById("explicit").value))) {
+                        setInitial()
+                    } else {
+                        setInitial(parseInt(document.getElementById("explicit").value))
+                    }
+                    
+                }
+            }/>
+            &#125;
+        </span></>
+        )
+    }
+
+    return (
+        <>
+        <form>
+            <label>
+                <input type="radio" id="InitWithDefault"></input>
+                {InitWithDefault()}
+            </label> 
+        </form>
         
         <div className="ArrayVisual" style={ {"gridTemplateColumns" : `repeat(${numElements}, [element] 1fr)`, "aspectRatio" : `${numElements}`} }>
             {elements}
