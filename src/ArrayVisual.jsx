@@ -52,6 +52,36 @@ function ArrayVisual() {
         }
     }
 
+    function InitVector() {
+        if (document.getElementById("InitVector").checked) {
+            // parse list
+            setArray([])
+        }
+    }
+
+    function VectorPush() {
+        if (document.getElementById("InitVector").checked) {
+            let element = parseInt(document.getElementById("push_back").value)
+            let arrayCopy = [];
+            array.forEach((a) => {
+                arrayCopy.push(a)
+            })
+            arrayCopy.push(element)
+            setArray(arrayCopy)
+        }
+    }
+
+    function VectorPop() {
+        if (document.getElementById("InitVector").checked) {
+            let arrayCopy = [];
+            array.forEach((a) => {
+                arrayCopy.push(a)
+            })
+            arrayCopy.pop()
+            setArray(arrayCopy)
+        }
+    }
+
     return (
         <>
         <form>
@@ -82,6 +112,35 @@ function ArrayVisual() {
                     int array[] = &#123; 
                     <input type="text" size={15} id = "explicit" onChange={InitExplicit}/>
                     &#125;
+                </span>
+
+                <br></br>
+
+                <input type="radio" id="InitVector" onClick={
+                    () => {
+                        ClearExcept("InitVector")
+                        InitVector()
+                    }
+                }></input>
+                <span style={ {fontWeight : "bold"} }>
+                    vector&#60;int&#62; vector 
+                    <div style={{marginLeft : "40px"}}>
+                        vector.push_back(<input type="text" size={1} id="push_back"></input>)
+                        <button type="button" onClick={
+                            () => {
+                                VectorPush()
+                            }
+                        }>run</button>
+
+                        <br></br>
+
+                        vector.pop_back()
+                        <button type="button" onClick={
+                            () => {
+                                VectorPop()
+                            }
+                        }>run</button>
+                    </div>                  
                 </span>
             </label> 
         </form>
