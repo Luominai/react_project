@@ -6,11 +6,11 @@ import ArrayVisual from './ArrayVisual.jsx'
 import PointerGuide from './PointerGuide.jsx'
 import ClassGuide from './ClassGuide.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-)
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//     <React.StrictMode>
+//         <App />
+//     </React.StrictMode>,
+// )
 
 ReactDOM.createRoot(document.getElementById('ArrayVisualRoot')).render(
     <React.StrictMode>

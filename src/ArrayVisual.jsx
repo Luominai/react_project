@@ -84,6 +84,7 @@ function ArrayVisual() {
 
     return (
         <>
+        <h3>Arrays</h3>
         <form>
             <label>
                 <input type="radio" id="InitWithDefault" onClick={
@@ -92,7 +93,7 @@ function ArrayVisual() {
                         InitWithDefault()
                     }
                 }></input>
-                <span style={ {fontWeight : "bold"} }>
+                <span>
                     int array[
                     <input type="text" size={1} maxLength={2} id = "size" onChange={InitWithDefault}/>
                     ] = &#123; 
@@ -108,7 +109,7 @@ function ArrayVisual() {
                         InitExplicit()
                     }
                 }></input>
-                <span style={ {fontWeight : "bold"} }>
+                <span>
                     int array[] = &#123; 
                     <input type="text" size={15} id = "explicit" onChange={InitExplicit}/>
                     &#125;
@@ -122,7 +123,7 @@ function ArrayVisual() {
                         InitVector()
                     }
                 }></input>
-                <span style={ {fontWeight : "bold"} }>
+                <span>
                     vector&#60;int&#62; vector 
                     <div style={{marginLeft : "40px"}}>
                         vector.push_back(<input type="text" size={1} id="push_back"></input>)
